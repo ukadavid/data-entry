@@ -24,7 +24,7 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', async () => {
   console.log('Connected to MongoDB');
-  await importDataFromCSV();
+  // await importDataFromCSV();
 
   app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
