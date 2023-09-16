@@ -1,4 +1,4 @@
-const Order = require('./model/order');
+const Order = require('../Model/order');
 
 // Create a new order
 const createOrder = ((req, res) => {
@@ -47,7 +47,7 @@ const retrieveTotalRevenue = ((req, res) => {
 });
 
 // Retrieve number of orders
-const retrieveNumberOfOrder = ('/api/total-orders', (req, res) => {
+const retrieveNumberOfOrder = ((req, res) => {
   Order.countDocuments((err, count) => {
     if (err) {
       return res.status(500).send(err);
@@ -65,3 +65,11 @@ const retrieveUniqueCustomerNames = ((req, res) => {
     return res.json(names.length);
   });
 });
+
+module.exports = {
+  createOrder,
+  retrieveOrder,
+  retrieveTotalRevenue,
+  retrieveNumberOfOrder, 
+  retrieveUniqueCustomerNames,
+}
