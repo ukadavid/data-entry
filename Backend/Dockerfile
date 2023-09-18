@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:14
 
 RUN apk add --no-cache bash
 
